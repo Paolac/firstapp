@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DragAndDrop"  >
+<head>
+	<meta charset="UTF-8">
+	<title>Drag and Drop</title>
+	<script src="js/jquery.js"></script>
+	<script src="angular/angular.js"></script>
+	<script src="js/ngDraggable.js"></script>
+	<script src="js/app.js"></script>
+	<script src= "js/DragDropController.js"></script>
+	<script src= "js/Directive.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="DragController">
+	<header>
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  			<div class="contain col-md-12 text-center">
+    			<h1>Drag and Drop</h1>
+  			</div>
+		</nav>
+	</header>
+	
+	<div class = "images text-center">
+
+		<div  class="dg" droppable ng-repeat="img in imgs" image= "img">
+		</div>
+
+	</div>
+
+
+	<div class = "images-cont" >
+
+		
+		<div  class="ig-cont" droppable ng-repeat="img in imgs2" image= "img">
+		
+
+		</div>
+	</div>
+
+
+
+
+
+</body>
+</html>
