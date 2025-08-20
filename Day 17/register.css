@@ -1,0 +1,222 @@
+/* Base styles matching the project's theme */
+body {
+    background-color: #8290f8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.form-container {
+    background: linear-gradient(to bottom right, #efcaba, #e9bca9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated element similar to the character animation */
+.form-animation {
+    width: 50px;
+    height: 50px;
+    background-color: #37850e;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    border-radius: 50%;
+    transform: scale(0.7);
+    -webkit-animation-name: formPulse;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes formPulse {
+    0% {
+        transform: scale(0.7);
+        background-color: #37850e;
+    }
+    50% {
+        transform: scale(1);
+        background-color: #0197bc;
+    }
+    100% {
+        transform: scale(0.7);
+        background-color: #673266;
+    }
+}
+
+.title {
+    color: #462c69;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #462c69;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Form styles */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #462c69;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #cbc9cc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0197bc;
+    box-shadow: 0 0 0 3px rgba(1, 151, 188, 0.2);
+}
+
+.error-message {
+    color: #d57155;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+/* Button styles */
+.button-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.submit-btn {
+    background-color: #462c69;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    background-color: #673266;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Button animation on hover */
+.submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.submit-btn:hover::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+/* Login link */
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #462c69;
+}
+
+.login-link a {
+    color: #0197bc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.login-link a:hover {
+    color: #673266;
+    text-decoration: underline;
+}
+
+/* Form validation styles */
+input.invalid {
+    border-color: #d57155;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+    
+    input {
+        padding: 10px;
+    }
+    
+    .submit-btn {
+        padding: 12px 25px;
+    }
+}
+
